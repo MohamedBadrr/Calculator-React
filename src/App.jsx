@@ -62,18 +62,17 @@ function App() {
   // ----------                      on many digits .                             ----------
 
   const getresult = ()=>{
-    let finalResult  = eval(result);
-
+    try{
+      let finalResult  = eval(result);
      if (finalResult != null){
       finalResult=finalResult.toString();
      }
      else{
       finalResult = result;
      }
-    try{
       setResult(finalResult)
     } catch(err){
-      setResult(err.toString())
+      setResult("Wrong Operation")
     }
   }
 
@@ -96,7 +95,7 @@ function App() {
           <div className='col-md-3  pe-2'> <button name='7' onClick={handleClick} className='w-100 m-0'>7</button></div>
           <div className='col-md-3  px-2 ' > <button name='8' onClick={handleClick} className='w-100  m-0'>8</button></div>
           <div className='col-md-3  ps-2'> <button name='9' onClick={handleClick} className='w-100  m-0'>9</button></div>
-          <div className='col-md-3  pe-2'> <button name='x' onClick={handleClick} className='w-100  m-0 opBtn operation'>x</button></div>
+          <div className='col-md-3  pe-2'> <button name='*' onClick={handleClick} className='w-100  m-0 opBtn operation'>*</button></div>
          </div>
 
          <div className='row my-2 px-3'>
